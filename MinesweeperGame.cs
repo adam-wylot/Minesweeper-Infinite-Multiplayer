@@ -90,6 +90,9 @@ public class MinesweeperGame : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        _graphics.PreferredBackBufferWidth = 1280;
+        _graphics.PreferredBackBufferHeight = 720;
+        _graphics.ApplyChanges();
         Window.AllowUserResizing = true;
         Window.Title = "MINESWEEPER INFINITE MULTIPLAYER COOP ULTIMATE EDITION";
         InactiveSleepTime = TimeSpan.Zero;
@@ -309,7 +312,7 @@ public class MinesweeperGame : Game
         {
             int width = GraphicsDevice.Viewport.Width;
             _spriteBatch.Begin();
-            DrawCenteredText(_minesweeperFont, "SAPER MULTIPLAYER", new Rectangle(0, 30, width, 50), Color.White, 40);
+            DrawCenteredText(_minesweeperFont, "MINESWEEPER MP!", new Rectangle(0, 30, width, 50), Color.White, 40);
             foreach (var btn in _menuButtons)
             {
                 btn.Draw(_spriteBatch, _minesweeperFont, _pixelTexture);
